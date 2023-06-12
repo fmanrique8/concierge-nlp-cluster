@@ -1,6 +1,4 @@
-# README.md
-
-## Concierge-NLP-Cluster
+# Concierge-NLP-Cluster
 
 Concierge-NLP-Cluster is a customizable document embedding and storage pipeline that leverages OpenAI's 
 machine learning models for text processing and analysis, and the in-memory database Redis for storage

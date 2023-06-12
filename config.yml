@@ -1,0 +1,17 @@
+#concierge-nlp-cluster/config.yml
+cors:
+  allowed_origins:
+    - http://localhost:8501
+models:
+  embedding:
+    model: text-embedding-ada-002
+  completion:
+    model: text-davinci-002
+    max_tokens: 500
+
+
+vector_settings:
+  num_vectors: 4000
+  prefix: "embedding"
+  vector_dim: 1536
+  distance_metric: "COSINE"

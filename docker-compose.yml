@@ -1,0 +1,26 @@
+#concierge-nlp-cluster/docker-compose.yml
+version: '3.9'
+services:
+
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+
+  concierge-db:
+    image: redis/redis-stack:latest
+    ports:
+      - "6379:6379"
+    environment:
+      - REDISEARCH_ARGS=CONCURRENT_WRITE_MODE
+    volumes:
+      - concierge-db:/var/lib/redis
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "localhost", "-p", "6379", "ping"]
+      interval: 2s
+      timeout: 1m30s
+      retries: 5
+      start_period: 5s
+
+volumes:
+  concierge-db:
